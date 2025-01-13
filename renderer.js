@@ -89,11 +89,8 @@ toggleButton.addEventListener("click", async () => {
         toggleButton.classList.add("active");
         toggleButton.removeAttribute("disabled");
     } else {
-        alert("ok");
         multiScrcpy.stopAll();
-        alert("stop");
         ipcRenderer.send("restart-app");
-        alert("restart");
     }
 });
 
