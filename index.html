@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Multi View | One click mirror tool | ADB Scrcpy Controller</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                font-family: "Ubuntu Mono", serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+            body {
+                background-color: #e5e5f7;
+                opacity: 0.8;
+                background-size: 10px 10px;
+                /* background-image: repeating-linear-gradient(45deg, #d9d9d9 0, #e4e4e4 1px, #f5f5ff 0, #ebebeb 50%); */
+                height: 100vh;
+            }
+            button {
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                box-shadow: 5px 5px 0px black;
+            }
+            button:disabled {
+                opacity: 0.6;
+            }
+            .active {
+                background-color: #ff4444;
+            }
+            .device-list li:not(:last-child) {
+                border-bottom: 1px solid rgba(128, 128, 128, 0.347);
+            }
+        </style>
+    </head>
+    <body class="flex flex-col">
+        <div class="bg-white p-4">
+            <h2 class="text-xl text-black">
+                <span class="app-logo font-bold p-2 border-2 border-black rounded-md tracking-wider mr-2">Multi View</span>One click mirror tool
+            </h2>
+        </div>
+
+        <div class="p-4">
+            <p id="deviceCount" class="p-3">ADB Devices (2)</p>
+            <ul id="deviceList" class="device-list border rounded-md border-black/30 px-2 max-w-md">Looking for devices
+            </ul>
+        </div>
+        <div class="flex flex-1 h-full"></div>
+        <div class="px-4 py-3 flex gap-4 items-center sticky bottom-0 bg-white">
+            <button class="border-2 border-black rounded-md p-2 bg-white text-lg font-bold" id="toggleButton">Start Scrcpy</button>
+            <p>For all devices</p>
+        </div>
+        <script type="module" src="renderer.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </body>
+</html>
